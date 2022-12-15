@@ -5,6 +5,7 @@ import { BrowserRouter }  from 'react-router-dom';
 import reportWebVitals    from 'reportWebVitals';
 import { HelmetProvider } from 'react-helmet-async';
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -12,11 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>    
     <BrowserRouter>
-
-    <HelmetProvider>   
+    <HelmetProvider>
         <App />
     </HelmetProvider>
-    
     </BrowserRouter>
   </React.StrictMode>
 );

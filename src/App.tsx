@@ -1,14 +1,14 @@
 import { ThemeProvider }  from '@mui/material';
 
 
-import { lightTheme }     from 'common/theme/theme';
+import { lightTheme }     from './common/theme/theme';
 import React, { FC }      from 'react';
 import { Route, Routes }  from 'react-router';
-import { BenefitsGuide, 
-  HomePage, 
-  NotFoundPage, 
-  ROUTES }                from 'static/constants/routes';
-import { Layout }         from 'common/components/Layout';
+import { Layout }         from './common/components/Layout';
+// import HomePage from './pages/Homepage';
+import BenefitsGuide from './pages/BenefitsGuide';
+import NotFoundPage from './pages/NotFoundPage';
+import { HomePage, ROUTES } from 'static/constants/routes';
 
 
 
