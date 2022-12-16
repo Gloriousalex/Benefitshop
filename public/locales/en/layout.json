@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Header",
+    "login": "Login"
+  },
+  "footer": {
+    "copyright": "Tech Fabric Copyright © {{year}}"
+  }
+}

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 
+import 'i18n/config';
 import App from 'App';
 import { theme } from 'styles/theme';
 import reportWebVitals from 'reportWebVitals';

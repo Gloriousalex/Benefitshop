@@ -1,0 +1,17 @@
+{
+  "button": {
+    "add": "Add",
+    "edit": "Edit",
+    "save": "Save",
+    "send": "Send",
+    "delete": "Delete",
+    "close": "Close",
+    "cancel": "Cancel",
+    "create": "Create",
+    "confirm": "Confirm",
+    "update": "Update",
+    "reset": "Reset"
+  },
+  "error": {},
+  "modal": {}
+}
