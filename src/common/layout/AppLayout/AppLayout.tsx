@@ -1,21 +1,13 @@
 import { FC, Suspense } from 'react';
-import { Outlet } from 'react-router';
 import { Loader } from 'components';
-import Footer from './Footer';
-import Header from './Header';
+import Dashboard from './DashBoard';
 
 const AppLayout: FC = () => {
   return (
     <>
-      <Header />
-
-      <main>
-        <Suspense fallback={<Loader isLoading />}>
-          <Outlet />
-        </Suspense>
-      </main>
-
-      <Footer />
+      <Suspense fallback={<Loader isLoading />}>
+        <Dashboard />
+      </Suspense>
     </>
   );
 };
