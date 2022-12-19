@@ -31,7 +31,7 @@ let theme = createTheme({
       default: '#141414',
     },
     text: {
-      primary: '#3B434E',
+      primary: '#FFF',
       secondary: '#FFF',
     },
   },

@@ -6,15 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { Collapse, List } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandMore';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import LoyaltyIcon from '@mui/icons-material/Loyalty';
-import MapIcon from '@mui/icons-material/Map';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import DevicesIcon from '@mui/icons-material/Devices';
-import SchoolIcon from '@mui/icons-material/School';
 import { FC } from 'react';
 import { navmenu } from 'common/static/navmenu';
+import { theme } from 'styles/theme';
 
 interface MainListItemsProps {
   toggleDrawer: () => void;
@@ -27,38 +21,50 @@ export const MainListItems: FC<MainListItemsProps> = ({
 }) => {
   const { t } = useTranslation('pages');
 
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<number | null>(null);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = (value: number) => {
+    if (open === value) {
+      setOpen(null);
+      return;
+    }
+    setOpen(value);
     if (!isSideBarOpen) toggleDrawer();
   };
 
   return (
-    <React.Fragment>
-      {navmenu.map(menu => (
-        <Fragment key={`${menu.key}`}>
-          <ListItemButton onClick={handleClick}>
+    <Fragment>
+      {navmenu.map(({ icon: Icon, key, title, expandMenu }, index) => (
+        <Fragment key={`${key}`}>
+          <ListItemButton onClick={() => handleClick(index)}>
             <ListItemIcon>
-              <menu.icon />
+              <Icon />
             </ListItemIcon>
-            <ListItemText primary={`${t(`${menu.title}`)}`} />
+            <ListItemText primary={`${t(`${title}`)}`} />
             {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit key={`${menu.key}`}>
+          <Collapse
+            in={open === index}
+            timeout="auto"
+            unmountOnExit
+            key={`${key}`}
+          >
             <List component="div" disablePadding>
-              {menu.expandMenu?.map(expandMenu => (
-                <ListItemButton sx={{ pl: 3 }} key={`${expandMenu.key}`}>
+              {expandMenu?.map(({ icon: Icon, key, pass, title }) => (
+                <ListItemButton
+                  sx={{ pl: 3, bgcolor: `${theme.palette.primary.dark}` }}
+                  key={`${key}`}
+                >
                   <ListItemIcon>
-                    <expandMenu.icon />
+                    <Icon />
                   </ListItemIcon>
-                  <ListItemText primary={`${t(`${expandMenu.title}`)}`} />
+                  <ListItemText primary={`${t(`${title}`)}`} />
                 </ListItemButton>
               ))}
             </List>
           </Collapse>
         </Fragment>
       ))}
-    </React.Fragment>
+    </Fragment>
   );
 };
