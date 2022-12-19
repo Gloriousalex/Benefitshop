@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Outlet } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -16,7 +17,6 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { MainListItems } from './MainListItems';
-import { useTranslation } from 'react-i18next';
 import { AccountInfo } from './AccountInfo';
 
 const drawerWidth: number = 240;
@@ -72,12 +72,12 @@ const Drawer = styled(MuiDrawer, {
 const mdTheme = createTheme();
 
 const DashboardContent = () => {
-  const [open, setOpen] = React.useState(false);
+  const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
   const { i18n } = useTranslation('layout');
 
   const toggleDrawer = () => {
-    setOpen(!open);
+    setSideBarOpen(!sideBarOpen);
   };
 
   const handleChangeLanguage = (language: string) => {
@@ -88,7 +88,7 @@ const DashboardContent = () => {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <AppBar position="absolute" open={sideBarOpen}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -101,7 +101,7 @@ const DashboardContent = () => {
               onClick={toggleDrawer}
               sx={{
                 marginRight: '36px',
-                ...(open && { display: 'none' }),
+                ...(sideBarOpen && { display: 'none' }),
               }}
             >
               <MenuIcon />
@@ -113,7 +113,7 @@ const DashboardContent = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Techfabric site
             </Typography>
             <Box>
               <Button
@@ -129,15 +129,11 @@ const DashboardContent = () => {
                 ua
               </Button>
             </Box>
-            {/* <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
+
             <AccountInfo />
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={sideBarOpen}>
           <Toolbar
             sx={{
               display: 'flex',
@@ -152,7 +148,10 @@ const DashboardContent = () => {
           </Toolbar>
           <Divider />
           <List component="nav">
-            <MainListItems />
+            <MainListItems
+              toggleDrawer={toggleDrawer}
+              isSideBarOpen={sideBarOpen}
+            />
             <Divider sx={{ my: 1 }} />
             {/* {secondaryListItems} */}
           </List>

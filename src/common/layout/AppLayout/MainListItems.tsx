@@ -1,83 +1,64 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
 import { useTranslation } from 'react-i18next';
 import { Collapse, List } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandMore';
-import { StarBorder } from '@mui/icons-material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
 import MapIcon from '@mui/icons-material/Map';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import DevicesIcon from '@mui/icons-material/Devices';
+import SchoolIcon from '@mui/icons-material/School';
+import { FC } from 'react';
+import { navmenu } from 'common/static/navmenu';
 
-export const MainListItems = () => {
+interface MainListItemsProps {
+  toggleDrawer: () => void;
+  isSideBarOpen: boolean;
+}
+
+export const MainListItems: FC<MainListItemsProps> = ({
+  toggleDrawer,
+  isSideBarOpen,
+}) => {
   const { t } = useTranslation('pages');
 
   const [open, setOpen] = useState<boolean>(false);
 
   const handleClick = () => {
     setOpen(!open);
+    if (!isSideBarOpen) toggleDrawer();
   };
 
   return (
     <React.Fragment>
-      <ListItemButton onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary={`${t('benefit.benefitshop')}`} />
-        {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-      </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 3 }}>
+      {navmenu.map(menu => (
+        <Fragment key={`${menu.key}`}>
+          <ListItemButton onClick={handleClick}>
             <ListItemIcon>
-              <LoyaltyIcon />
+              <menu.icon />
             </ListItemIcon>
-            <ListItemText primary={`${t('benefit.myBenefit')}`} />
+            <ListItemText primary={`${t(`${menu.title}`)}`} />
+            {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
-
-          <ListItemButton sx={{ pl: 3 }}>
-            <ListItemIcon>
-              <AccountTreeIcon />
-            </ListItemIcon>
-            <ListItemText primary={`${t('benefit.bonusGuide')}`} />
-          </ListItemButton>
-
-          <ListItemButton sx={{ pl: 3 }}>
-            <ListItemIcon>
-              <MapIcon />
-            </ListItemIcon>
-            <ListItemText primary={`${t('benefit.benefitMap')}`} />
-          </ListItemButton>
-        </List>
-      </Collapse>
-
-      <ListItemButton>
-        <ListItemIcon>
-          <ShoppingCartIcon />
-        </ListItemIcon>
-        <ListItemText primary={`${t('knowledgeBase.knowledgeBase')}`} />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <PeopleIcon />
-        </ListItemIcon>
-        <ListItemText primary={`${t('testDevices.testDevices')}`} />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <BarChartIcon />
-        </ListItemIcon>
-        <ListItemText primary={`${t('library.library')}`} />
-      </ListItemButton>
+          <Collapse in={open} timeout="auto" unmountOnExit key={`${menu.key}`}>
+            <List component="div" disablePadding>
+              {menu.expandMenu?.map(expandMenu => (
+                <ListItemButton sx={{ pl: 3 }} key={`${expandMenu.key}`}>
+                  <ListItemIcon>
+                    <expandMenu.icon />
+                  </ListItemIcon>
+                  <ListItemText primary={`${t(`${expandMenu.title}`)}`} />
+                </ListItemButton>
+              ))}
+            </List>
+          </Collapse>
+        </Fragment>
+      ))}
     </React.Fragment>
   );
 };
