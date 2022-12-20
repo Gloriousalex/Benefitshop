@@ -9,6 +9,8 @@ import ExpandLessIcon from '@mui/icons-material/ExpandMore';
 import { FC } from 'react';
 import { navmenu } from 'common/static/navmenu';
 import { theme } from 'styles/theme';
+import { Link } from 'react-router-dom';
+import { ROUTES } from 'common/types/routes';
 
 interface MainListItemsProps {
   toggleDrawer: () => void;
@@ -40,7 +42,9 @@ export const MainListItems: FC<MainListItemsProps> = ({
             <ListItemIcon>
               <Icon />
             </ListItemIcon>
+
             <ListItemText primary={`${t(`${title}`)}`} />
+
             {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
           <Collapse

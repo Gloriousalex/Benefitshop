@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { Outlet } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import {
   Box,
   Button,
-  CssBaseline,
   Divider,
   IconButton,
   List,
