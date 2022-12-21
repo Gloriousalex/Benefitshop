@@ -1,10 +1,12 @@
-import SchoolIcon from '@mui/icons-material/School';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import LoyaltyIcon from '@mui/icons-material/Loyalty';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import MapIcon from '@mui/icons-material/Map';
-import DevicesIcon from '@mui/icons-material/Devices';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import {
+  School as SchoolIcon,
+  MoveToInbox as InboxIcon,
+  Loyalty as LoyaltyIcon,
+  AccountTree as AccountTreeIcon,
+  Map as MapIcon,
+  Devices as DevicesIcon,
+  LocalLibrary as LocalLibraryIcon,
+} from '@mui/icons-material';
 
 interface IExpandMenu {
   title: string;
