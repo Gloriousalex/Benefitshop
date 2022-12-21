@@ -6,6 +6,6 @@ import BenefitsMapContainer from 'containers/BenefitsMapContainer/BenefitsMapCon
 const BenefitsMapPage: FC = () => <BenefitsMapContainer />;
 
 export default withMetadata({
-  title: METADATA.Benefits_Map.title,
-  description: METADATA.Benefits_Map.description,
+  title: METADATA.BENEFITS_MAP.title,
+  description: METADATA.BENEFITS_MAP.description,
 })(BenefitsMapPage);

@@ -11,15 +11,15 @@ export const METADATA = {
     title: 'Page not found',
     description: 'Page not found',
   },
-  My_Benefits: {
+  MY_BENEFITS: {
     title: 'My benefits',
     description: 'Benefits page',
   },
-  Benefits_Guide: {
+  BENEFITS_GUIDE: {
     title: 'Benefits Guide',
     description: 'Benefits guide page',
   },
-  Benefits_Map: {
+  BENEFITS_MAP: {
     title: 'Benefits Map',
     description: 'Benefits map page',
   },

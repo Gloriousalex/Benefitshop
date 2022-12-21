@@ -8,6 +8,6 @@ const LoginPage: FC = () => {
 };
 
 export default withMetadata({
-  title: METADATA.My_Benefits.title,
-  description: METADATA.My_Benefits.description,
+  title: METADATA.MY_BENEFITS.title,
+  description: METADATA.MY_BENEFITS.description,
 })(LoginPage);
