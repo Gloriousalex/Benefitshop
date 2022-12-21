@@ -1,0 +1,17 @@
+{
+  "benefit": {
+    "benefitshop": "Benefitshop",
+    "myBenefit": "My benefitshop",
+    "bonusGuide": "bonus guide",
+    "benefitMap": "Benefit map"
+  },
+  "knowledgeBase": {
+    "knowledgeBase": "Knowledge base"
+  },
+  "testDevices": {
+    "testDevices": "Test Devices"
+  },
+  "library": {
+    "library": "Corporate library"
+  }
+}

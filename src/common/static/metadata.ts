@@ -11,4 +11,8 @@ export const METADATA = {
     title: 'Page not found',
     description: 'Page not found',
   },
+  My_Benefits: {
+    title: 'My benefits',
+    description: 'Benefits page',
+  },
 };
