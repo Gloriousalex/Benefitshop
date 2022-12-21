@@ -3,5 +3,7 @@ export enum ROUTES {
   AUTH = 'auth',
   LOGIN = 'login',
   NOT_FOUND = '*',
-  MyBenefits = 'mybenefits',
+  MYBENEFITS = 'mybenefits',
+  BENEFITS_GUIDE = 'benefitguide',
+  BENEFITS_MAP = 'benefitsmap',
 }

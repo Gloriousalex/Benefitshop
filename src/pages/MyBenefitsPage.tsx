@@ -3,9 +3,11 @@ import { withMetadata } from 'common/hoc/withMetadata';
 import { METADATA } from 'common/static/metadata';
 import MyBenefitContainer from 'containers/MyBenefitContainer/MyBenefitContainer';
 
-const LoginPage: FC = () => <MyBenefitContainer />;
+const LoginPage: FC = () => {
+  return <MyBenefitContainer />;
+};
 
 export default withMetadata({
-  title: METADATA.LOGIN.title,
-  description: METADATA.LOGIN.description,
+  title: METADATA.My_Benefits.title,
+  description: METADATA.My_Benefits.description,
 })(LoginPage);
