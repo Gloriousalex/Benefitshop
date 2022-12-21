@@ -1,16 +1,16 @@
-import React, { Fragment, useState } from 'react';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import { Fragment, useState, FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Collapse, List } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandMore';
-import { FC } from 'react';
-import { navmenu } from 'common/static/navmenu';
-import { theme } from 'styles/theme';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'common/types/routes';
+
+import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  ExpandMore as ExpandMoreIcon,
+  ExpandLess as ExpandLessIcon,
+} from '@mui/icons-material';
+import { navmenu } from 'common/static/navmenu';
+import { theme } from 'styles/theme';
 
 interface MainListItemsProps {
   toggleDrawer: () => void;
@@ -47,12 +47,7 @@ export const MainListItems: FC<MainListItemsProps> = ({
 
             {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
-          <Collapse
-            in={open === index}
-            timeout="auto"
-            unmountOnExit
-            key={`${key}`}
-          >
+          <Collapse in={open === index} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {expandMenu?.map(({ icon: Icon, key, pass, title }) => (
                 <ListItemButton
