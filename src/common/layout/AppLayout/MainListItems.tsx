@@ -1,6 +1,5 @@
 import { Fragment, useState, FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 import {
   ListItemButton,
@@ -46,7 +45,7 @@ export const MainListItems: FC<MainListItemsProps> = ({
         <Fragment key={`${key}`}>
           <ListItemButton onClick={() => handleClick(index)}>
             <ListItemIcon>
-              <Icon />
+              <Icon sx={{ fontSize: '30px' }} />
             </ListItemIcon>
 
             <ListItemText primary={`${t(`${title}`)}`} />
@@ -62,7 +61,7 @@ export const MainListItems: FC<MainListItemsProps> = ({
                 >
                   <LeftPanelLink to={pass}>
                     <ListItemIcon>
-                      <Icon />
+                      <Icon sx={{ fontSize: '30px' }} />
                     </ListItemIcon>
                     <ListItemText primary={`${t(`${title}`)}`} />
                   </LeftPanelLink>

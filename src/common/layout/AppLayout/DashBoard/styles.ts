@@ -1,7 +1,6 @@
 import { theme } from 'styles/theme';
 // eslint-disable-next-line import/named
 import { Theme } from '@mui/material';
-
 import { AppBar as MuiAppBar, Drawer as MuiDrawer } from '@mui/material';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
@@ -11,13 +10,18 @@ export const HeaderLink = styled(Link)(({ theme: Theme }) => ({
   display: 'flex',
   fontSize: theme.typography.h2.fontSize,
   textDecoration: 'none',
+  width: 'max-content',
 }));
 
 export const LeftPanelLink = styled(Link)(({ theme: Theme }) => ({
   color: theme.palette.common.white,
   display: 'flex',
-  fontsize: theme.typography.h2.fontSize,
+  fontsize: theme.typography.h3.fontSize,
   textDecoration: 'none',
+}));
+
+export const LanguageWrapper = styled('div')(() => ({
+  marginRight: '5%',
 }));
 
 const drawerWidth: number = 240;

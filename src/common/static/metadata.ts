@@ -1,26 +1,26 @@
 export const METADATA = {
   HOME: {
-    title: 'Home',
+    title: 'main.main',
     description: 'Home page',
   },
   LOGIN: {
-    title: 'Login',
+    title: 'login.login',
     description: 'Login page',
   },
   NOT_FOUND: {
-    title: 'Page not found',
+    title: 'notfound.title',
     description: 'Page not found',
   },
   MY_BENEFITS: {
-    title: 'My benefits',
+    title: 'benefit.myBenefit',
     description: 'Benefits page',
   },
   BENEFITS_GUIDE: {
-    title: 'Benefits Guide',
+    title: 'benefit.bonusGuide',
     description: 'Benefits guide page',
   },
   BENEFITS_MAP: {
-    title: 'Benefits Map',
+    title: 'benefit.benefitMap',
     description: 'Benefits map page',
   },
 };

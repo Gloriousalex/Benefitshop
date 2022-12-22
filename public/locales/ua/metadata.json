@@ -1,0 +1,17 @@
+{
+  "main": {
+    "main": "Стартова сторінка"
+  },
+  "benefit": {
+    "benefitshop": "Benefitshop",
+    "myBenefit": "Мій benefitshop",
+    "bonusGuide": "Гайд з начислення",
+    "benefitMap": "Карта бенефітів"
+  },
+  "notfound": {
+    "title": "Сторінка не знайдена"
+  },
+  "login": {
+    "login": "Вхід в систему"
+  }
+}

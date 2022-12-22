@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { orange, grey, green, teal, red } from '@mui/material/colors';
 

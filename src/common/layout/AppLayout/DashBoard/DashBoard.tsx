@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { Outlet } from 'react-router';
-import { useTranslation } from 'react-i18next';
-
 import {
   Box,
-  Button,
   Divider,
   IconButton,
   List,
@@ -20,18 +17,13 @@ import { MainListItems } from '../MainListItems';
 import { AccountInfo } from '../AccountInfo';
 import { ROUTES } from 'common/types/routes';
 import { AppBar, Drawer, HeaderLink } from './styles';
+import { LanguageMenu } from '../LanguageMenu';
 
 export const DashBoard = () => {
   const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
-  const { i18n } = useTranslation('layout');
-
   const toggleDrawer = () => {
     setSideBarOpen(!sideBarOpen);
-  };
-
-  const handleChangeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
   };
 
   return (
@@ -63,20 +55,7 @@ export const DashBoard = () => {
           >
             <HeaderLink to={ROUTES.HOME}>Techfabric site</HeaderLink>
           </Typography>
-          <Box>
-            <Button
-              sx={{ color: 'white' }}
-              onClick={() => handleChangeLanguage('en')}
-            >
-              en
-            </Button>
-            <Button
-              sx={{ color: 'white' }}
-              onClick={() => handleChangeLanguage('ua')}
-            >
-              ua
-            </Button>
-          </Box>
+          <LanguageMenu />
 
           <AccountInfo />
         </Toolbar>

@@ -1,0 +1,16 @@
+{
+  "main": {
+    "main": "Main page"
+  },
+  "benefit": {
+    "myBenefit": "My benefitshop",
+    "bonusGuide": "Bonus guide",
+    "benefitMap": "Benefit map"
+  },
+  "notfound": {
+    "title": "Page not found"
+  },
+  "login": {
+    "login": "Login page"
+  }
+}

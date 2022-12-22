@@ -7,7 +7,7 @@ interface Meta {
   description: string;
 }
 
-export const withMetadata = (meta: Meta) => (WrappedRoute: FC) => {
+export const withnewMeta = (meta: Meta) => (WrappedRoute: FC) => {
   return class WithMetadata extends Component {
     render() {
       return (

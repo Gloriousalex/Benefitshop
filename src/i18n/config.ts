@@ -9,7 +9,7 @@ i18n
   .use(Backend)
   .init({
     fallbackLng: 'ua',
-    supportedLngs: ['en', 'ua'],
+    supportedLngs: ['en', 'ua', 'ru'],
     detection: {
       order: ['queryString', 'cookie', 'htmlTag'],
       caches: ['cookie'],
@@ -17,7 +17,7 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json', // load from server
     },
-    ns: ['common', 'layout'],
+    ns: ['common', 'layout', 'pages', 'metadata'],
     interpolation: {
       escapeValue: false,
     },
