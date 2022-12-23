@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Outlet } from 'react-router';
 import {
   Box,
@@ -20,7 +20,7 @@ import { AppBar, Drawer, HeaderLink } from './styles';
 import { LanguageMenu } from '../LanguageMenu';
 
 export const DashBoard = () => {
-  const [sideBarOpen, setSideBarOpen] = React.useState(false);
+  const [sideBarOpen, setSideBarOpen] = useState(false);
 
   const toggleDrawer = () => {
     setSideBarOpen(!sideBarOpen);

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef, useState, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -9,18 +9,18 @@ import {
   Popper,
   MenuItem,
   MenuList,
+  ClickAwayListener,
 } from '@mui/material';
 import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material/';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
 
 import { LanguageWrapper } from './DashBoard/styles';
 
 const options = ['en', 'ua', 'ru'];
 
 export const LanguageMenu = () => {
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLDivElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState(1);
   const { i18n } = useTranslation('layout');
 
   const handleChangeLanguage = (language: string) => {
@@ -32,7 +32,7 @@ export const LanguageMenu = () => {
   };
 
   const handleMenuItemClick = (
-    event: React.MouseEvent<HTMLLIElement, MouseEvent>,
+    event: MouseEvent,
     index: number,
     option: string,
   ) => {
