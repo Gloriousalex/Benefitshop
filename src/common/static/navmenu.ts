@@ -7,6 +7,7 @@ import {
   Devices as DevicesIcon,
   LocalLibrary as LocalLibraryIcon,
 } from '@mui/icons-material';
+import { ROUTES } from 'common/types/routes';
 
 interface IExpandMenu {
   title: string;
@@ -31,19 +32,19 @@ export const navmenu: Inavmenu[] = [
     expandMenu: [
       {
         title: 'benefit.myBenefit',
-        pass: '',
+        pass: ROUTES.MYBENEFITS,
         icon: LoyaltyIcon,
         key: 'mybenefit',
       },
       {
         title: 'benefit.bonusGuide',
-        pass: '',
+        pass: ROUTES.BENEFITS_GUIDE,
         icon: AccountTreeIcon,
         key: 'bonusguide',
       },
       {
         title: 'benefit.benefitMap',
-        pass: '',
+        pass: ROUTES.BENEFITS_MAP,
         icon: MapIcon,
         key: 'benefitMap',
       },

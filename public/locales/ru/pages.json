@@ -1,0 +1,17 @@
+{
+  "benefit": {
+    "benefitshop": "Benefitshop",
+    "myBenefit": "Мой benefitshop",
+    "bonusGuide": "Гайд по начислению",
+    "benefitMap": "Карта бенефитов"
+  },
+  "knowledgeBase": {
+    "knowledgeBase": "База знаний"
+  },
+  "testDevices": {
+    "testDevices": "Тестовые девайсы"
+  },
+  "library": {
+    "library": "Библиотека"
+  }
+}

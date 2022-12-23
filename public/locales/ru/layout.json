@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Шапка",
+    "login": "Авторизация"
+  },
+  "footer": {
+    "copyright": "Tech Fabric Copyright © {{year}}"
+  }
+}

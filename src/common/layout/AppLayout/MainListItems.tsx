@@ -1,16 +1,21 @@
 import { Fragment, useState, FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Collapse, List } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { ROUTES } from 'common/types/routes';
 
-import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Collapse,
+  List,
+} from '@mui/material';
 import {
   ExpandMore as ExpandMoreIcon,
   ExpandLess as ExpandLessIcon,
 } from '@mui/icons-material';
+
 import { navmenu } from 'common/static/navmenu';
 import { theme } from 'styles/theme';
+import { LeftPanelLink } from './DashBoard/styles';
 
 interface MainListItemsProps {
   toggleDrawer: () => void;
@@ -40,12 +45,12 @@ export const MainListItems: FC<MainListItemsProps> = ({
         <Fragment key={`${key}`}>
           <ListItemButton onClick={() => handleClick(index)}>
             <ListItemIcon>
-              <Icon />
+              <Icon sx={{ fontSize: '30px' }} />
             </ListItemIcon>
 
             <ListItemText primary={`${t(`${title}`)}`} />
 
-            {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            {open === index ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
           <Collapse in={open === index} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -54,10 +59,12 @@ export const MainListItems: FC<MainListItemsProps> = ({
                   sx={{ pl: 3, bgcolor: `${theme.palette.primary.dark}` }}
                   key={`${key}`}
                 >
-                  <ListItemIcon>
-                    <Icon />
-                  </ListItemIcon>
-                  <ListItemText primary={`${t(`${title}`)}`} />
+                  <LeftPanelLink to={pass}>
+                    <ListItemIcon>
+                      <Icon sx={{ fontSize: '30px' }} />
+                    </ListItemIcon>
+                    <ListItemText primary={`${t(`${title}`)}`} />
+                  </LeftPanelLink>
                 </ListItemButton>
               ))}
             </List>

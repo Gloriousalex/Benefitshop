@@ -1,6 +1,6 @@
 import { FC, Suspense } from 'react';
 import { Loader } from 'components';
-import { DashBoard } from './DashBoard';
+import { DashBoard } from './DashBoard/DashBoard';
 
 const AppLayout: FC = () => {
   return (
